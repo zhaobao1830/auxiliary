@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <h-dialog ref="hDialog"></h-dialog>
     <router-view></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-//  引入组件
-import header from './components/Header.vue'
+import HDialog from './components/Master'
 
 export default {
   name: 'app',
   components: {
-    'v-header': header
+    HDialog
   }
 }
 </script>
