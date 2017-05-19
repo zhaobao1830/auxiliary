@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <h-dialog ref="hDialog"></h-dialog>
     <router-view></router-view>
+    <hello></hello>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import HDialog from './components/Master'
-
+import Hello from './components/Hello'
 export default {
   name: 'app',
   components: {
-    HDialog
+    HDialog,
+    Hello
   }
 }
 </script>

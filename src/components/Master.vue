@@ -18,13 +18,6 @@
 <script type="text/ecmascript-6">
 import hDialogBack from './background'
 
-function getclientPoint () {
-  return {
-    width: document.documentElement.clientWidth || document.body.clientWidth,
-    height: document.documentElement.clientHeight || document.body.clientHeight
-  }
-}
-
 export default {
   name: 'HDialog',
   data () {
@@ -58,8 +51,8 @@ export default {
         comp.resolve = resolve
         comp.reject = reject
       })
-      comp.width = comp.width || 600
-      comp.height = comp.height || 400
+//      comp.width = comp.width || 600
+//      comp.height = comp.height || 400
       this.comps.push(comp)
       if (!this.$refs.back.show) {
         this.$refs.back.open()
@@ -78,13 +71,12 @@ export default {
       comp.resolve({'type': type, 'close': close})
     },
     style: function (index, comp) {
-      let point = getclientPoint()
       return {
         zIndex: this.realIndex + index,
-        width: comp.width + 'px',
-        height: comp.height + 'px',
-        left: ((point.width - comp.width) / 2) + 'px',
-        top: ((point.height - comp.height) / 2) + 'px'
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0
       }
     }
   }
@@ -92,5 +84,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+  .modal-content {
+    position: absolute;
+  }
 </style>

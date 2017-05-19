@@ -24,7 +24,7 @@ export default {
     open: function () {
       this.show = true
     },
-    closa: function () {
+    close: function () {
       this.show = false
     }
   }
